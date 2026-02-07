@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "lcsa-core",
+    "lcsa-daemon",
+]
+resolver = "3"
