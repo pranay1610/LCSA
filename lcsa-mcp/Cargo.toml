@@ -7,7 +7,7 @@ repository = "https://github.com/pranay1610/LCSA"
 homepage = "https://github.com/pranay1610/LCSA"
 documentation = "https://docs.rs/lcsa-mcp"
 description = "MCP server for LCSA - exposes local context signals to AI tools"
-keywords = ["ai", "mcp", "context", "clipboard", "model-context-protocol"]
+keywords = ["ai", "mcp", "context", "clipboard", "context-protocol"]
 categories = ["command-line-utilities", "development-tools"]
 readme = "README.md"
 
