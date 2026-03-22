@@ -127,12 +127,24 @@ Run the MCP server for AI tool integration:
 cargo run -p lcsa-mcp
 ```
 
+Install from crates.io:
+
+```bash
+cargo install lcsa-mcp
+```
+
+Use the included wrapper from this repo (handy for MCP client configs):
+
+```bash
+./lcsa-mcp-wrapper
+```
+
 Configure Claude Desktop (`~/.config/claude/mcp_servers.json`):
 
 ```json
 {
   "lcsa": {
-    "command": "lcsa-mcp"
+    "command": "/absolute/path/to/lcsa-mcp-wrapper"
   }
 }
 ```

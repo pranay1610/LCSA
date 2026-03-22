@@ -509,12 +509,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "lcsa-core"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "28e91c283a977cbb2edb94e1b2622a12004334bb163311e0d09f1d69e5e660e9"
+dependencies = [
+ "arboard",
+ "crossbeam-channel",
+ "dirs",
+ "serde",
+ "serde_json",
+ "signal-hook",
+ "thiserror 2.0.18",
+ "time",
+ "x11rb",
+]
+
+[[package]]
 name = "lcsa-daemon"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap",
- "lcsa-core",
+ "lcsa-core 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "notify",
  "serde_json",
  "tempfile",
@@ -526,7 +543,7 @@ dependencies = [
 name = "lcsa-mcp"
 version = "0.1.0"
 dependencies = [
- "lcsa-core",
+ "lcsa-core 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde",
  "serde_json",
  "thiserror 2.0.18",

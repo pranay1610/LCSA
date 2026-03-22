@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Thin launcher for MCP clients. It keeps config simple and lets you pin
+# the server binary via LCSA_MCP_BIN when needed.
+
+if [[ "${LCSA_MCP_DEBUG:-}" == "1" ]]; then
+  export RUST_LOG="${RUST_LOG:-lcsa_mcp=debug,warn}"
+else
+  export RUST_LOG="${RUST_LOG:-warn}"
+fi
+
+if [[ -n "${LCSA_MCP_BIN:-}" ]]; then
+  bin="${LCSA_MCP_BIN}"
+elif command -v lcsa-mcp >/dev/null 2>&1; then
+  bin="$(command -v lcsa-mcp)"
+elif [[ -f "$(dirname "$0")/lcsa-mcp" && -x "$(dirname "$0")/lcsa-mcp" ]]; then
+  bin="$(dirname "$0")/lcsa-mcp"
+elif [[ -f "$(dirname "$0")/target/release/lcsa-mcp" && -x "$(dirname "$0")/target/release/lcsa-mcp" ]]; then
+  bin="$(dirname "$0")/target/release/lcsa-mcp"
+else
+  echo "lcsa-mcp-wrapper: could not find lcsa-mcp binary" >&2
+  echo "Set LCSA_MCP_BIN=/absolute/path/to/lcsa-mcp or install with cargo install lcsa-mcp" >&2
+  exit 127
+fi
+
+exec "$bin" "$@"

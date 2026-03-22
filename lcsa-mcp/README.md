@@ -24,6 +24,19 @@ Run the server (stdio transport):
 lcsa-mcp
 ```
 
+Or run via wrapper (from repo root):
+
+```bash
+./lcsa-mcp-wrapper
+```
+
+Wrapper behavior:
+
+- Uses `lcsa-mcp` from `PATH` by default
+- Supports pinning with `LCSA_MCP_BIN=/absolute/path/to/lcsa-mcp`
+- Sets `RUST_LOG=warn` by default
+- Enables debug logs with `LCSA_MCP_DEBUG=1`
+
 ### Configure Claude Desktop
 
 Add to `~/.config/claude/mcp_servers.json`:
@@ -31,12 +44,12 @@ Add to `~/.config/claude/mcp_servers.json`:
 ```json
 {
   "lcsa": {
-    "command": "lcsa-mcp"
+    "command": "/absolute/path/to/lcsa-mcp-wrapper"
   }
 }
 ```
 
-Or with full path:
+Or direct binary:
 
 ```json
 {
@@ -54,7 +67,7 @@ Add to your MCP configuration:
 {
   "mcpServers": {
     "lcsa": {
-      "command": "lcsa-mcp"
+      "command": "/absolute/path/to/lcsa-mcp-wrapper"
     }
   }
 }
@@ -86,7 +99,7 @@ Add to your MCP configuration:
   "device": {
     "id": "abc123",
     "name": "workstation",
-    "platform": "Linux"
+    "platform": "linux"
   },
   "application": {
     "id": "lcsa-mcp",
@@ -95,7 +108,7 @@ Add to your MCP configuration:
   "supported_signals": ["clipboard", "selection", "focus"],
   "latest_signals": {
     "clipboard": {
-      "content_type": "Text",
+      "content_type": "text",
       "size_bytes": 42,
       "source_app": "firefox",
       "likely_sensitive": false,
