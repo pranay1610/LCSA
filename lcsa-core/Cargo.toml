@@ -2,5 +2,26 @@
 name = "lcsa-core"
 version = "0.1.0"
 edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/pranay1610/LCSA"
+homepage = "https://github.com/pranay1610/LCSA"
+documentation = "https://docs.rs/lcsa-core"
+description = "Local context substrate for AI-native software - typed signals for clipboard, selection, and focus"
+keywords = ["ai", "context", "clipboard", "mcp", "signals"]
+categories = ["api-bindings", "development-tools"]
+readme = "README.md"
 
 [dependencies]
+arboard = "3.6"
+crossbeam-channel = "0.5"
+dirs = "5.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+time = { version = "0.3", features = ["formatting", "macros", "parsing", "serde"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+x11rb = { version = "0.13", features = ["xfixes"] }
+
+[target.'cfg(unix)'.dependencies]
+signal-hook = "0.3"

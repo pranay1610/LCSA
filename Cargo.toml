@@ -2,5 +2,6 @@
 members = [
     "lcsa-core",
     "lcsa-daemon",
+    "lcsa-mcp",
 ]
 resolver = "3"

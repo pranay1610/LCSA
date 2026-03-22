@@ -1,0 +1,24 @@
+[package]
+name = "lcsa-mcp"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/pranay1610/LCSA"
+homepage = "https://github.com/pranay1610/LCSA"
+documentation = "https://docs.rs/lcsa-mcp"
+description = "MCP server for LCSA - exposes local context signals to AI tools"
+keywords = ["ai", "mcp", "context", "clipboard", "model-context-protocol"]
+categories = ["command-line-utilities", "development-tools"]
+readme = "README.md"
+
+[[bin]]
+name = "lcsa-mcp"
+path = "src/main.rs"
+
+[dependencies]
+lcsa-core = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
