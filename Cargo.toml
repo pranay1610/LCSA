@@ -5,3 +5,5 @@ members = [
     "lcsa-mcp",
 ]
 resolver = "3"
+[patch.crates-io]
+lcsa-core = { path = "lcsa-core" }
