@@ -1,5 +1,9 @@
 # LCSA
 
+[![lcsa-core on crates.io](https://img.shields.io/crates/v/lcsa-core.svg)](https://crates.io/crates/lcsa-core)
+[![lcsa-daemon on crates.io](https://img.shields.io/crates/v/lcsa-daemon.svg)](https://crates.io/crates/lcsa-daemon)
+[![lcsa-mcp on crates.io](https://img.shields.io/crates/v/lcsa-mcp.svg)](https://crates.io/crates/lcsa-mcp)
+
 LCSA is a local context substrate for AI-native software.
 
 It turns low-level local signals into stable, typed context that applications,
