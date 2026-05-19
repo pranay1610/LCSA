@@ -189,6 +189,13 @@ The next strong extensions are:
 - browser tab or download events
 - TypeScript bindings
 
+## License and Attribution
+
+LCSA is licensed under Apache-2.0 (see `LICENSE`).
+
+Please keep the project attribution in `NOTICE` when redistributing this
+project or derivative works, and mention that your work is based on LCSA.
+
 ## Mobile Version Policy
 
 LCSA should treat mobile as a capability matrix, not a single backend:
